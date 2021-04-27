@@ -1,4 +1,9 @@
 import pygame as pg
+import sys
+
+def fin_juego():
+    pg.quit()
+    sys.exit()
 
 pg.init()
 
@@ -11,7 +16,10 @@ while not game_over:
     #gestion de eventos
   
     for evento in pg.event.get():
-        pass
+        if evento.type == pg.QUIT:
+            game_over = True
+            
+            
 
     #gestion del estado
     print('Hola, Mundo')
@@ -20,3 +28,7 @@ while not game_over:
     pantalla.fill((0, 255, 0))
 
     pg.display.flip()
+
+fin_juego()
+
+
